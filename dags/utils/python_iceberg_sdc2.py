@@ -128,6 +128,7 @@ class IcebergTable:
             name='default',
             type='glue'
         )
+        glue.create_namespace_if_not_exists(self.__database)
         if glue.table_exists(f'{self.__database}.{self.__table_name}'):
             table = glue.load_table(f'{self.__database}.{self.__table_name}')
         else:

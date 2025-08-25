@@ -1,0 +1,11 @@
+dbt_project:
+  outputs:
+    dev:
+      database: awsdatacatalog
+      region_name: us-east-1
+      s3_data_dir: s3://victorouttes-landing/dw/
+      s3_staging_dir: s3://victorouttes-landing/athena/
+      schema: datalake
+      threads: 4
+      type: athena
+  target: dev

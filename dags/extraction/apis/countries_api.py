@@ -45,11 +45,9 @@ def countries_api_extractor():
         df = df[['cca3', 'area', 'population', 'name.common']]
         df = df.rename(columns={'cca3': 'code', 'name.common': 'name'})
 
-        df['area'] = '0'
-
         database = IcebergDatabase(
-            database_name='iceberg_lake',
-            catalog_s3_path='s3://victorouttes-landing/dw/iceberg_lake.db',
+            database_name='datalake_bronze',
+            catalog_s3_path='s3://victorouttes-landing/dw/datalake_bronze',
             aws_hook=s3_hook
         )
         IcebergTable(

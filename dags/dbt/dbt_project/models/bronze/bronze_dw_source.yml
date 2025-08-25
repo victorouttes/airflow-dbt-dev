@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: datalake_bronze
+    database: awsdatacatalog
+    schema: datalake_bronze
+    tables:
+      - name: countries
